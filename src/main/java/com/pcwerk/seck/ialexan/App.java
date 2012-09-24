@@ -1,4 +1,4 @@
-package com.pcwerk.seck;
+package com.pcwerk.seck.ialexan;
 
 /**
  * Hello world!
@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println( "Hello Ishag Alexanian, Hello World!" );
     }
 }
