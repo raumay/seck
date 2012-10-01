@@ -6,11 +6,11 @@ import javax.servlet.http.*;
 
 public class HelloWorld extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		out.println("Hello World, Mr. Johnny!");
-	}
+  public void doGet(HttpServletRequest request, HttpServletResponse response)
+  throws ServletException, IOException {
+    PrintWriter out = response.getWriter();
+    out.println("Hello World, Mr. Johnny!");
+  }
 }
