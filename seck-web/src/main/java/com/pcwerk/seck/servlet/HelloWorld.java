@@ -10,7 +10,12 @@ public class HelloWorld extends HttpServlet {
 
   public void doGet(HttpServletRequest request, HttpServletResponse response)
   throws ServletException, IOException {
+    
+    response.setContentType("text/html");
+    
     PrintWriter out = response.getWriter();
-    out.println("Hello World, Mr. Johnny!");
+    String name = request.getParameter("name");
+    out.println("Hello + " + name + "!");
+    out.println("<a href=index.jsp>back to form</a>");
   }
 }
