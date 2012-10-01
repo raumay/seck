@@ -5,12 +5,15 @@ Search Engine Construction Kit
 
 version 0.0.1
 
+DIRECTORY ORGANIZATION
+
 seck-lib -- library routines that are shared by both the backend applications and the web application
 
 seck-app -- suite of backend applications that are responsible for crawling and indexing/archiving (cataloging) data 
 
 seck-web -- servlet-based web application providing users with a browser interface access to the search engine data
 
+ECLIPSE GUIDE
 
 To develop the project in eclipse (this is assuming that you've correctly pulled or forked the project from the master branch):
 
@@ -24,5 +27,9 @@ To develop the project in eclipse (this is assuming that you've correctly pulled
 3. From eclipse configure build path for sec-app and sec-web
    Java Build Path > Projects > Add > seck-lib
 
-The idea here is that both app and web depends on lib.
+The idea here is that both app and web depend on lib.
+
+CONTACT
+
+For more information on the seck project: johnjtran@acm.org
 
