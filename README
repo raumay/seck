@@ -29,6 +29,16 @@ To develop the project in eclipse (this is assuming that you've correctly pulled
 
 The idea here is that both app and web depend on lib.
 
+TOMCAT
+
+Tomcat is configured to run in place within seck-web, to use it:
+
+cd /path/to/seck-web
+mvn tomcat:run
+
+Point your web browser to http://localhost:8080/seck-web/hello
+
+
 CONTACT
 
 For more information on the seck project: johnjtran@acm.org
