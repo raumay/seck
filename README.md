@@ -1,27 +1,26 @@
-seck
-====
+# SECK
 
 Search Engine Construction Kit
 
 version 0.0.2
 
-# DIRECTORY ORGANIZATION
+## Directory Organization
 
-## seck-lib
+### seck-lib
 
 Library routines that are shared by both the backend applications and the web application
 
-## seck-app
+### seck-app
 
 Suite of backend applications that are responsible for crawling and indexing/archiving (cataloging) data 
 
-## seck-web
+### seck-web
 
 Servlet-based web application providing users with a browser interface access to the search engine data
 
-# GITHUB GUIDE
+## GITHUB Guide
 
-## PULL REQUEST FROM PCWERK TO YOUR ACCOUNT
+### Pull request from PCWeRK to your account
 
 1. Go to your Github Pull Requests Page, https://github.com/<Your Git Hub Account>/seck/pulls
 2. Click "Pull Request" button
@@ -33,7 +32,7 @@ Servlet-based web application providing users with a browser interface access to
 8. Go to your Pull Requests Page again
 9. Choose "OPEN" tab, then click "Merge pull request" button.  
 
-# ECLIPSE GUIDE
+## Eclipse Guide
 
 To develop the project in eclipse (this is assuming that you've correctly pulled or forked the project from the development branch):
 
@@ -51,7 +50,7 @@ Make sure that you do not check copy project into workspace as this will cause p
 
 3. Repeat step #2 for sec-app and sec-web -- note that you ONLY need to import into eclipse and that you only need to run 'mvn eclipse:eclipse' (step #1) once at the top level directory
 
-# SAMPLE APP
+## Sample App
 
 To compile/package the sample command line search program:
 
@@ -64,7 +63,7 @@ To run
     java -jar seck-app-0.0.2.jar /search/path "keyword"
 
 
-# TOMCAT
+## Tomcat
 
 Tomcat is configured to run in place within the top level directory, to use it:
 
@@ -81,7 +80,7 @@ You will notice that we now have a different port for tomcat 6 (and 7) and the t
 
     http://localhost:9090/
 
-# CONTACT
+## CONTACT
 
 For more information on the seck project: johnjtran@acm.org
 
