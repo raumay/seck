@@ -30,7 +30,7 @@ Servlet-based web application providing users with a browser interface access to
 6. Choose PCWERK head branch [right-side]: development
 7. In "New Pull Request" text editor, write down the subject, and body, then click "Send pull request"
 8. Go to your Pull Requests Page again
-9. Choose "OPEN" tab, then click "Merge pull request" button.  
+9. Choose "OPEN" tab, then click "Merge pull request" button
 
 ## Eclipse Guide
 
@@ -42,13 +42,13 @@ To develop the project in eclipse (this is assuming that you've correctly pulled
     mvn install
     mvn eclipse:eclipse
 
-2. Importing modules (projects) into eclipse:
+
+
+2. Importing modules (projects) into eclipse.  Make sure that you do not check copy project into workspace as this will cause problems for synchronizing with GIT.
 
    File > Import > General > Existing Projects into Workspace > [select path to sec-lib] 
 
-Make sure that you do not check copy project into workspace as this will cause problems for synchronizing with GIT.
-
-3. Repeat step #2 for sec-app and sec-web -- note that you ONLY need to import into eclipse and that you only need to run 'mvn eclipse:eclipse' (step #1) once at the top level directory
+3. Repeat step #2 for sec-app and sec-web -- note that you ONLY need to import into eclipse and that you only need to run 'mvn eclipse:eclipse' (step #1) once at the top level directory.
 
 ## Sample App
 
