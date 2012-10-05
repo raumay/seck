@@ -15,7 +15,7 @@ seck-web -- servlet-based web application providing users with a browser interfa
 
 ECLIPSE GUIDE
 
-To develop the project in eclipse (this is assuming that you've correctly pulled or forked the project from the master branch):
+To develop the project in eclipse (this is assuming that you've correctly pulled or forked the project from the development branch):
 
 1. Using maven to setup your eclipse settings in your top level directory:
 
