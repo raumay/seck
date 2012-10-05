@@ -22,9 +22,9 @@ Servlet-based web application providing users with a browser interface access to
 
 ### Pull request from PCWeRK to your account
 
-1. Go to your Github Pull Requests Page, https://github.com/<Your Git Hub Account>/seck/pulls
+1. Go to your Github Pull Requests Page, https://github.com/$account/seck/pulls
 2. Click "Pull Request" button
-3. Choose the base repository value to be from YOUR account [left-side]: <Your Github Account>/seck
+3. Choose the base repository value to be from YOUR account [left-side]: $account/seck
 4. Choose YOUR branch account [left-side]: master (or development if you've created one)
 5. Choose the head repository value to be from PCWERK account [right-side]:  pcwerk/seck
 6. Choose PCWERK head branch [right-side]: development
