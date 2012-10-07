@@ -2,7 +2,7 @@
 
 Search Engine Construction Kit
 
-version 0.0.2
+version 0.0.3 RC
 
 ## Directory Organization
 
