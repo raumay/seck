@@ -17,16 +17,8 @@
   </fileSets>
   <moduleSets>
     <moduleSet>
-      <includes>
-<!--
-        <include>com.pcwerk.seck:seck-app</include>
-        <include>com.pcwerk.seck:seck-lib</include>
-        <include>com.pcwerk.seck:seck-web</include>
--->
-      </includes>
-      <sources>
-        <outputDirectory>sources/${artifactId}</outputDirectory>
-      </sources>
+      <includes></includes>
+      <sources></sources>
     </moduleSet>
   </moduleSets>
 </assembly>
