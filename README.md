@@ -38,11 +38,9 @@ To develop the project in eclipse (this is assuming that you've correctly pulled
 
 1. Using maven to setup your eclipse settings in your top level directory:
 
-    cd /path/to/seck/
-    mvn install
-    mvn eclipse:eclipse
-
-
+     cd /path/to/seck/
+     mvn install
+     mvn eclipse:eclipse
 
 2. Importing modules (projects) into eclipse.  Make sure that you do not check copy project into workspace as this will cause problems for synchronizing with GIT.
 
@@ -61,7 +59,6 @@ To run
 
     cd /path/to/seck/seck-app/target/
     java -jar seck-app-0.0.2.jar /search/path "keyword"
-
 
 ## Tomcat
 
