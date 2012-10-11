@@ -14,9 +14,12 @@
   <fileSets>
      <fileSet>
        <directory>.</directory>
-     <excludes>
-        <exclude>**/target/**</exclude>
-     </excludes>
+       <excludes>
+         <exclude>**/target/**</exclude>
+         <exclude>**/.settings/**</exclude>
+         <exclude>**/.project</exclude>
+         <exclude>**/.classpath</exclude>
+       </excludes>
      </fileSet>
   </fileSets>
   <moduleSets>
