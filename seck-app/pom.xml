@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.pcwerk</groupId>
     <artifactId>seck</artifactId>
-    <version>0.0.3-rc</version>
+    <version>0.0.3</version>
   </parent>
 
   <artifactId>seck-app</artifactId>
@@ -52,7 +52,6 @@
     <dependency>
        <groupId>gnu.getopt</groupId>
        <artifactId>java-getopt</artifactId>
-       <version>1.0.13</version>
        <scope>provided</scope>
     </dependency> 
     <dependency>
