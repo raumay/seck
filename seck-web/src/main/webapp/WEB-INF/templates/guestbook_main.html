@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Hello World Guestbook</title>
+
+		<script type="text/javascript">
+			function doSubmit() {
+				var theForm = document.getElementById("searchForm");
+				theForm.action = "/rest/search/" + document.getElementById("searchTerm").value;
+				theForm.submit();
+			}
+		</script>
+
+	</head>
+	<body>
+		<h1>Hello World Guestbook</h1>
+		<div style="font: 13px/27px Arial,sans-serif;padding-left:155px">
+
+			<#list guestBookEntries as entry>
+			<div style="margin:0px 0px 0px 0px;font-weight:bold;color:green;">
+				${entry.timestamp?datetime}
+			</div>
+			<div style="margin:-10px 0px 10px 0px;padding-left:10px;font-style:oblique;">
+				${entry.name}: ${entry.message}
+
+			</div>
+			</#list>
+		</div>
+		<div style="text-align:center;padding-top:120px;">
+			<form id="guestBookEntry" method="post" action="" onsubmit="javascript:doSubmit();">
+				<textarea id="message">Enter message here</textarea>
+				<input type="button" value="Search" onclick="javascript:doSubmit();" />
+			</form>
+		</div>
+	</body>
+</html>
