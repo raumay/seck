@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.pcwerk</groupId>
     <artifactId>seck</artifactId>
-    <version>0.0.3-rc</version>
+    <version>0.0.4-rc</version>
   </parent>
 
   <artifactId>seck-web</artifactId>
@@ -62,10 +62,6 @@
       <artifactId>jsp-api</artifactId>
     </dependency>
     <dependency>
-	<groupId>javax.servlet</groupId>
-	<artifactId>jstl</artifactId>
-    </dependency>
-    <dependency>
       <groupId>javax.ws.rs</groupId>
       <artifactId>jsr311-api</artifactId>
     </dependency>
@@ -114,7 +110,7 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>1.2.12</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -124,15 +120,23 @@
     <dependency>
       <groupId>org.restlet.jee</groupId>
       <artifactId>org.restlet</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.restlet.jee</groupId>
       <artifactId>org.restlet.ext.servlet</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.restlet.jee</groupId>
       <artifactId>org.restlet.ext.freemarker</artifactId>
-    </dependency> 
+      <scope>provided</scope>
+    </dependency>  
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
 </project>
