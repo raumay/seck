@@ -46,6 +46,7 @@ public class SeckWebRestletApp extends Application {
 		// com.pcwerk.seck.rest.reslet.resources package
 		// Example: router.attach("/search", SearchResource.class);
 		router.attach("/helloworld", HelloWorldResource.class);
+		router.attach("/helloworld/", HelloWorldResource.class);
 		router.attach("/helloworld/{name}", HelloWorldResource.class);
 
 		// Default resource handler for unmapped URIs

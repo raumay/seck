@@ -1,12 +1,19 @@
 package com.pcwerk.seck.rest.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.pcwerk.seck.rest.entities.GuestEntry;
 
+/**
+ * Data source for the guestbook model
+ * 
+ * @author mlbuising
+ * 
+ */
 public class InMemoryGuestBook implements GuestBook {
 
 	private Map<String, List<GuestEntry>> guestBookEntries;
@@ -43,6 +50,8 @@ public class InMemoryGuestBook implements GuestBook {
 			}
 		}
 
+		Collections.sort(masterList);
+		
 		if (guestBookEntries.containsKey(name)) {
 			return guestBookEntries.get(name);
 		}
