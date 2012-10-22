@@ -1,1 +1,0 @@
-Main-Class: com.pcwerk.seck.App
