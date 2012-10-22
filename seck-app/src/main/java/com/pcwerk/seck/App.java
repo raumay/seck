@@ -1,85 +1,141 @@
 package com.pcwerk.seck;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
 
 public class App {
   
+  protected ArrayList<String> commandStack = new ArrayList<String>();
+  protected HashMap<String,String> params = new HashMap<String,String>();
   
-  public static void main(String[] argv) 
-  { 
+  public static void main(String[] argv) { 
     App app = new App();
     app.parseArgs(argv);
+    app.showParams();
+    app.run();
+  }
+
+  private void showParams() {
+    System.out.println("[i] commands:");
+    for (String command : commandStack) {
+      System.out.println("[i]   " + command);
+    }
+    
+    System.out.println("[i] parameters:");
+    for (String key : params.keySet() ) {
+      System.out.println("[i]   " + key + " => " + params.get(key));
+    }
+  }
+
+  private void usage() {
+    System.out.println("usage: App <command> <required parameters> [options]");
+    System.out.println("command(s):");
+    System.out.println("crawl             perform crawling action");
+    System.out.println("  --root-url=URL  start crawling at URL (required)");
+    System.out.println("options:");
+    System.out.println("  --tc=#          specify the thread count (default=1)");
+    System.out.println("  --depth=#       specify crawling depth (default = 1");
+    System.out.println("  --file=FILENAME specify a datafile to save (if not specified, use to stdout)");
   }
   
-  private void parseArgs(String[] argv)
-  {
+  private void run() {
+    for (String command : commandStack) {
+      System.out.println("[i] execute: " + command);
+      if (command.equals("crawl")) {
+        if (! params.containsKey("root-url")) {
+          usage();
+          System.exit(0);
+        }
+        crawl();
+      } else if (command.equals("crawl-info")) {
+        crawlInfo();
+      } else {
+        System.out.println("[e]   '" + command + "' => unknown command");
+      }
+    }
+  }
+  
+  private void crawl() {
+    System.out.println("[i]   crawling starts");
+    
+    // put in your crawling code here -- all parameters are in params
+    
+    System.out.println("[i]   crawling ends");
+  }
+
+  private void crawlInfo() {
+    System.out.println("[i]   display information on the crawled data");
+    
+    // put your crawling information code here -- all parameters are in params
+  }
+
+  private void parseArgs(String[] argv) {
     StringBuffer sb = new StringBuffer();
 
-    final String shortopts = "-:bc::d:hW;";
+    final String shortopts = "-:hu:c:f:d:;";
     final LongOpt[] longopts = 
     { 
         new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h'),
-        new LongOpt("outputdir", LongOpt.REQUIRED_ARGUMENT, sb, 'o'),
-        new LongOpt("maximum", LongOpt.OPTIONAL_ARGUMENT, null, 2) 
+        new LongOpt("root-url", LongOpt.REQUIRED_ARGUMENT, sb, 'u'),
+        new LongOpt("tc", LongOpt.REQUIRED_ARGUMENT, sb, 'c'),
+        new LongOpt("depth", LongOpt.REQUIRED_ARGUMENT, sb, 'd'),
+        new LongOpt("file", LongOpt.REQUIRED_ARGUMENT, sb, 'f')
     };
 
     Getopt g = new Getopt("App", argv, shortopts, longopts);
-    g.setOpterr(false); // We'll do our own error handling
+    g.setOpterr(false);
 
     int c = 0;
-    String arg = "";
 
-    while ((c = g.getopt()) != -1)
+    while ((c = g.getopt()) != -1) {
+      String key = longopts[g.getLongind()].getName();
+      String val = g.getOptarg();
+
       switch (c) {
       case 0:
-        arg = g.getOptarg();
-        System.out.println("Got long option with value '"
-            + (char) (new Integer(sb.toString())).intValue()
-            + "' with argument " + ((arg != null) ? arg : "null"));
+        params.put(key, val);
         break;
       case 1:
-        System.out.println("I see you have return in order set and that "
-            + "a non-option argv element was just found " + "with the value '"
-            + g.getOptarg() + "'");
+        commandStack.add(val);
         break;
       case 2:
-        arg = g.getOptarg();
-        System.out.println("I know this, but pretend I didn't");
-        System.out.println("We picked option "
-            + longopts[g.getLongind()].getName() + " with value "
-            + ((arg != null) ? arg : "null"));
-        break;
-      case 'b':
-        System.out.println("You picked plain old option " + (char) c);
-        break;
-      case 'c':
-      case 'd':
-        arg = g.getOptarg();
-        System.out.println("You picked option '" + (char) c
-            + "' with argument " + ((arg != null) ? arg : "null"));
+        // weirdness occurs!
         break;
       case 'h':
-        System.out.println("I see you asked for help");
+        usage();
+        System.exit(0);
         break;
-      case 'W':
-        System.out.println("Hmmm. You tried a -W with an incorrect long "
-            + "option name");
+      case 'u':
+        params.put("root-url", g.getOptarg());
+        break;
+      case 'c':
+        params.put("tc", g.getOptarg());
+        break;
+      case 'd':
+        params.put("depth", g.getOptarg());
+        break;
+      case 'f':
+        params.put("file", g.getOptarg());
         break;
       case ':':
-        System.out.println("Doh! You need an argument for option "
-            + (char) g.getOptopt());
+        System.out.println("You need an argument for option " + (char) g.getOptopt());
         break;
       case '?':
-        System.out.println("The option '" + (char) g.getOptopt()
-            + "' is not valid");
+        System.out.println("The option '" + (char) g.getOptopt() + "' is not valid");
         break;
       default:
         System.out.println("getopt() returned " + c);
         break;
       }
-
-    for (int i = g.getOptind(); i < argv.length; i++)
-      System.out.println("Non option argv element: " + argv[i] + "\n");
+    }
+    
+    /*
+    for (int i = g.getOptind(); i < argv.length; i++) {
+      commandStack.add(argv[i]);
+    }
+    */
   }
 }
