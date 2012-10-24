@@ -27,3 +27,6 @@ For more information on this project, please visit the [SECK wiki] (https://gith
 
 * Standalone App that parses commandline arguments
 
+### version 0.0.5-dev
+
+* Hadoop cluster builder with vagrant and virtualbox, courtesy of http://java.dzone.com/articles/setting-hadoop-virtual-cluster
