@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.pcwerk</groupId>
   <artifactId>seck</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5-dev</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -174,7 +174,6 @@
         <groupId>org.restlet.jee</groupId>
         <artifactId>org.restlet.ext.freemarker</artifactId>
         <version>2.0.15</version>
-        <scope>provided</scope>
       </dependency>
       <dependency>
 	<groupId>javax.servlet</groupId>
@@ -241,6 +240,18 @@
         <version>4.10</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+      	<groupId>org.apache.tika</groupId>
+        <artifactId>tika-core</artifactId>
+        <version>1.2</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+      	<groupId>org.apache.tika</groupId>
+        <artifactId>tika-parsers</artifactId>
+        <version>1.2</version>
+        <scope>provided</scope>
+      </dependency>	
     </dependencies>
   </dependencyManagement>
 
@@ -280,6 +291,7 @@
   <modules>
     <module>seck-lib</module>
     <module>seck-app</module>
+    <module>seck-cluster</module>
     <module>seck-web</module>
   </modules>
 </project>

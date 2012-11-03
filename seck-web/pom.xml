@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.pcwerk</groupId>
     <artifactId>seck</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5-dev</version>
   </parent>
 
   <artifactId>seck-web</artifactId>
@@ -120,17 +120,14 @@
     <dependency>
       <groupId>org.restlet.jee</groupId>
       <artifactId>org.restlet</artifactId>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.restlet.jee</groupId>
       <artifactId>org.restlet.ext.servlet</artifactId>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.restlet.jee</groupId>
       <artifactId>org.restlet.ext.freemarker</artifactId>
-      <scope>provided</scope>
     </dependency>  
     <dependency>
       <groupId>javax.servlet</groupId>
