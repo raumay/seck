@@ -1,0 +1,30 @@
+<assembly>
+  <id>exe</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory></outputDirectory>
+      <outputFileNameMapping></outputFileNameMapping>
+      <unpack>true</unpack>
+      <scope>runtime</scope>
+      <includes>
+        <include>gnu.getopt:java-getopt</include>
+        <include>org.ccil.cowan.tagsoup:tagsoup</include>
+        <include>com.googlecode.juniversalchardet:juniversalchardet:1.0.3</include>
+        <include>org.apache.tika:tika-core</include>
+        <include>org.apache.tika:tika-parsers</include>
+        <include>com.pcwerk:seck-lib</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <directory>target/classes</directory>
+      <outputDirectory></outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>
+
