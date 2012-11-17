@@ -5,6 +5,9 @@
 Search Engine Construction Kit (SECK) Demo page.  Below are the various web applications
 demoing the tools and technologies used for making SECK.
 
+<h2>Seck Demo Home page</h2>
+<a href="/home.jsp">Seck Home Page</a> <br />
+
 <h2>Obligatory "Hello, World!" Application</h2> 
 
 <form action="/servlet/hello" method="get">

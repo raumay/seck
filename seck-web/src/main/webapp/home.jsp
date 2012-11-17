@@ -26,7 +26,7 @@
         <div class="container-fluid">
         
         	<div class="row-fluid pagination-centered">
-        		<div class="span12"><h1>SECK LOGO HERE</h1></div>
+        		<div class="span12"><h1><img src="img/SeckLogo.jpg" alt="Seck Logo" ></h1></div>
         	</div>
         	
         	<div class="row-fluid pagination-centered">
